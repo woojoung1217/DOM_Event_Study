@@ -8,7 +8,7 @@
     <script defer src="./index.js"></script>
   </head>
   <body>
-    <h1>wellcome</h1>
+    <!-- <h1>wellcome</h1>
     <h2>wolrd</h2>
     <h3>A</h3>
     <p id="first">
@@ -46,6 +46,48 @@
       <li id="red">RED</li>
       <li id="blue">BLUE</li>
       <li id="green">GREEN</li>
-    </ul>
+    </ul> -->
+    <!-- 
+    <div id="Box" class="box bg-red">BOX</div>
+    <ul id="color">
+      <li>Red</li>
+      <li>Blue</li>
+      <li>green</li>
+    </ul> -->
+
+    <div
+      id="box"
+      style="
+        width: 300px;
+        height: 300px;
+        border: 1px solid red;
+        position: relative;
+      "
+    >
+      <div
+        id="circle"
+        style="
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          border: 1px;
+          border-radius: 10px;
+          background-color: black;
+        "
+      ></div>
+    </div>
+
+    <script>
+      const box = document.getElementById("box");
+      const circle = document.getElementById("circle");
+      box.addEventListener("mousemove", (event) => {
+        circle.style.top = `${event.clientY}px`;
+        circle.style.left = `${event.clientX}px`;
+      });
+
+      window.addEventListener("resize", () => {
+        document.body.innerText = `현재 창 크기는 ${window.innerWidth} X ${window.innerHeight}`;
+      });
+    </script>
   </body>
 </html>
